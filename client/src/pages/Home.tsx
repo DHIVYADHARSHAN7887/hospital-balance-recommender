@@ -8,6 +8,9 @@ import {
 } from "lucide-react";
 
 type Status = "Needs approval" | "Approved" | "On hold" | "Rejected";
+
+// Fixed replay fixtures keep the evaluation reproducible: every reviewer sees
+// the same shortage, expiry, route, cost, and workforce evidence.
 type Rec = {
   id: string; item: string; sku: string; urgency: "Critical" | "Watch" | "Routine";
   from: string; to: string; quantity: number; unit: string; due: string; route: string;

@@ -11,6 +11,13 @@ interface State {
   error: Error | null;
 }
 
+/**
+ * Last-resort UI recovery for render and lifecycle failures below App.
+ *
+ * This boundary intentionally exposes the stack for development diagnosis and
+ * offers a full-page reload. Event-handler and async failures are not captured
+ * by React error boundaries; those must be handled at the action/API boundary.
+ */
 class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
